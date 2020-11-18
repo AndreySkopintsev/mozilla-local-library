@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    h1 #{title}
+
+    p #[strong Title]: #{book_instance.book.title}
+    p #[strong Imprint]: #{book_instance.imprint}
+    p #[strong Status]: #{book_instance.status}
+
+    form(method='POST' action='')
+            div.form-group
+                input#bookinstanceid.form-control(type='hidden',name='bookinstanceid',required='true',value=book_instance._id)
+                input#bookid.form-control(type='hidden',name='bookid',required='true',value=book_instance.book._id)
+            button.btn.btn-primary(type='submit') Delete 
